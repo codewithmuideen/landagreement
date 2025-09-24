@@ -160,8 +160,8 @@ const Hero = () => {
             className="relative bg-gradient-to-br from-[#0047AB] to-[#001D4A] p-8 rounded-xl shadow-2xl text-white max-w-lg w-full border border-green-500 overflow-hidden"
           >
             {/* Watermark */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-10 text-6xl font-bold text-white pointer-events-none">
-              Tendaly Inc.
+            <div className="absolute inset-0 flex items-center justify-center opacity-10 text-4xl font-bold text-white pointer-events-none">
+              Digital Land Registry Inc.
             </div>
 
             {/* Close button */}
