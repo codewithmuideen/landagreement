@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.PhoneInputInput {
+  flex: 1;
+  min-width: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding-left: 0.75rem; 
+}
+
+
+@keyframes scrolling {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scrolling {
+  display: flex;
+  animation: scrolling 20s linear infinite;
+}
+
+.animate-scrolling:hover {
+  animation-play-state: paused;
+}
+
+.PhoneInputCountry {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 1023px) {
+ 
+  img[alt="Global Career Advisors Logo"] {
+    height: 2.75rem; 
+  }
+}
+
+

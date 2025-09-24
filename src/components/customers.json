@@ -1,0 +1,92 @@
+[
+  {
+    "parcelId": "LA-IKJ-23-00981",
+    "owner": "Adeyemi & Co.",
+    "status": "Clean (No Encumbrance)",
+    "tenure": "99-year Lease",
+    "address": "Ikeja, Lagos",
+    "updatedAt": "12 Sep 2025 • 14:22",
+    "type": "Lease"
+  },
+  {
+    "parcelId": "LA-IKJ-23-00982",
+    "owner": "Bello Farms Ltd",
+    "status": "Under Investigation",
+    "tenure": "Freehold",
+    "address": "Ikorodu, Lagos",
+    "updatedAt": "01 Aug 2025 • 09:12",
+    "type": "Purchase"
+  },
+  {
+    "parcelId": "LA-ABJ-21-12001",
+    "owner": "Oluwaseun Holdings",
+    "status": "Encumbered",
+    "tenure": "Leasehold",
+    "address": "Jabi, Abuja",
+    "updatedAt": "20 Jul 2025 • 11:00",
+    "type": "Lease"
+  },
+  {
+    "parcelId": "OG-PTK-19-00555",
+    "owner": "Riverside Real Estate",
+    "status": "Clean (No Encumbrance)",
+    "tenure": "Freehold",
+    "address": "Port Harcourt, Rivers",
+    "updatedAt": "04 Sep 2025 • 08:30",
+    "type": "Purchase"
+  },
+  {
+    "parcelId": "EN-UNK-20-33421",
+    "owner": "Greenfields Ltd",
+    "status": "Pending Approval",
+    "tenure": "99-year Lease",
+    "address": "Enugu, Enugu",
+    "updatedAt": "02 Sep 2025 • 12:22",
+    "type": "Lease"
+  },
+  {
+    "parcelId": "LA-IKJ-23-00999",
+    "owner": "Musa & Sons",
+    "status": "Clean (No Encumbrance)",
+    "tenure": "Freehold",
+    "address": "Ogba, Lagos",
+    "updatedAt": "11 Sep 2025 • 07:42",
+    "type": "Purchase"
+  },
+  {
+    "parcelId": "KD-IKD-24-00100",
+    "owner": "Olawale Estates",
+    "status": "Restricted Title",
+    "tenure": "Leasehold",
+    "address": "Aba, Abia",
+    "updatedAt": "28 Aug 2025 • 16:10",
+    "type": "Lease"
+  },
+  {
+    "parcelId": "KW-IKD-22-01010",
+    "owner": "Sunrise Developers",
+    "status": "Clean (No Encumbrance)",
+    "tenure": "Freehold",
+    "address": "Kwara, Ilorin",
+    "updatedAt": "15 Jul 2025 • 10:00",
+    "type": "Purchase"
+  },
+  {
+    "parcelId": "LA-IKJ-22-01111",
+    "owner": "Anambra Land Co.",
+    "status": "Encumbered",
+    "tenure": "99-year Lease",
+    "address": "Onitsha, Anambra",
+    "updatedAt": "05 Jun 2025 • 13:44",
+    "type": "Lease"
+  },
+  {
+    "parcelId": "LA-IKJ-21-09999",
+    "owner": "Okonkwo Properties",
+    "status": "Clean (No Encumbrance)",
+    "tenure": "Freehold",
+    "address": "Yaba, Lagos",
+    "updatedAt": "09 Sep 2025 • 22:11",
+    "type": "Purchase"
+  }
+]
