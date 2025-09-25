@@ -25,6 +25,7 @@
     "react-router-dom": "^7.6.2",
     "react-router-hash-link": "^2.4.3",
     "react-scroll": "^1.9.3",
+    "recharts": "^3.2.1",
     "sass": "^1.89.2",
     "styled-components": "^6.1.14",
     "zod": "^4.0.17"

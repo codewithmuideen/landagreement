@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { BiCube } from "react-icons/bi";
 import { FiSearch, FiExternalLink, FiDownload } from 'react-icons/fi';
-import { MdVerified, MdOutlineRealEstateAgent } from 'react-icons/md'; 
-import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
-import Barcode from "react-barcode";
+import { MdVerified } from 'react-icons/md';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
+import Barcode from 'react-barcode';
 import images from '../constants/images';
 
 // Dummy data for customer information
@@ -12,21 +11,94 @@ const customerData = [
   {
     parcelId: 'LA-IKJ-23-00981',
     owner: 'Adeyemi & Co.',
-    tenure: '99-year Lease',
     status: 'Clean (No Encumbrance)',
+    tenure: '99-year Lease',
     address: 'Ikeja, Lagos',
-    lastUpdated: '12 Sep 2023 • 14:22',
+    updatedAt: '12 Sep 2025 • 14:22',
+    type: 'Lease',
   },
   {
-    parcelId: 'AB-GRB-22-01234',
-    owner: 'Grace Holdings Ltd.',
+    parcelId: 'LA-IKJ-23-00982',
+    owner: 'Bello Farms Ltd',
+    status: 'Under Investigation',
     tenure: 'Freehold',
+    address: 'Ikorodu, Lagos',
+    updatedAt: '01 Aug 2025 • 09:12',
+    type: 'Purchase',
+  },
+  {
+    parcelId: 'LA-ABJ-21-12001',
+    owner: 'Oluwaseun Holdings',
+    status: 'Encumbered',
+    tenure: 'Leasehold',
+    address: 'Jabi, Abuja',
+    updatedAt: '20 Jul 2025 • 11:00',
+    type: 'Lease',
+  },
+  {
+    parcelId: 'OG-PTK-19-00555',
+    owner: 'Riverside Real Estate',
     status: 'Clean (No Encumbrance)',
-    address: 'Garki, Abuja',
-    lastUpdated: '01 Aug 2023 • 10:00',
+    tenure: 'Freehold',
+    address: 'Port Harcourt, Rivers',
+    updatedAt: '04 Sep 2025 • 08:30',
+    type: 'Purchase',
+  },
+  {
+    parcelId: 'EN-UNK-20-33421',
+    owner: 'Greenfields Ltd',
+    status: 'Pending Approval',
+    tenure: '99-year Lease',
+    address: 'Enugu, Enugu',
+    updatedAt: '02 Sep 2025 • 12:22',
+    type: 'Lease',
+  },
+  {
+    parcelId: 'LA-IKJ-23-00999',
+    owner: 'Musa & Sons',
+    status: 'Clean (No Encumbrance)',
+    tenure: 'Freehold',
+    address: 'Ogba, Lagos',
+    updatedAt: '11 Sep 2025 • 07:42',
+    type: 'Purchase',
+  },
+  {
+    parcelId: 'KD-IKD-24-00100',
+    owner: 'Olawale Estates',
+    status: 'Restricted Title',
+    tenure: 'Leasehold',
+    address: 'Aba, Abia',
+    updatedAt: '28 Aug 2025 • 16:10',
+    type: 'Lease',
+  },
+  {
+    parcelId: 'KW-IKD-22-01010',
+    owner: 'Sunrise Developers',
+    status: 'Clean (No Encumbrance)',
+    tenure: 'Freehold',
+    address: 'Kwara, Ilorin',
+    updatedAt: '15 Jul 2025 • 10:00',
+    type: 'Purchase',
+  },
+  {
+    parcelId: 'LA-IKJ-22-01111',
+    owner: 'Anambra Land Co.',
+    status: 'Encumbered',
+    tenure: '99-year Lease',
+    address: 'Onitsha, Anambra',
+    updatedAt: '05 Jun 2025 • 13:44',
+    type: 'Lease',
+  },
+  {
+    parcelId: 'LA-IKJ-21-09999',
+    owner: 'Okonkwo Properties',
+    status: 'Clean (No Encumbrance)',
+    tenure: 'Freehold',
+    address: 'Yaba, Lagos',
+    updatedAt: '09 Sep 2025 • 22:11',
+    type: 'Purchase',
   },
 ];
-
 const Hero = () => {
   const [typedText, setTypedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -80,26 +152,28 @@ const Hero = () => {
   };
 
   const handleDownloadPDF = () => {
-    const modal = document.getElementById("verification-modal");
+    const modal = document.getElementById('verification-modal');
     if (!modal) return;
 
     html2canvas(modal, { scale: 2 }).then((canvas) => {
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF("p", "mm", "a4");
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
       const imgProps = pdf.getImageProperties(imgData);
       const pdfWidth = pdf.internal.pageSize.getWidth();
       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
       pdf.save(`${verificationResult.parcelId}_Verification_Report.pdf`);
     });
   };
 
   return (
-    <section id="verify" className="relative flex items-center justify-center min-h-screen text-white py-16 px-4 bg-gradient-to-r from-[#0047AB] to-[#001D4A]">
+    <section
+      id="verify"
+      className="relative flex items-center justify-center min-h-screen text-white py-16 px-4 bg-gradient-to-r from-[#0047AB] to-[#001D4A]"
+    >
       <div className="relative z-10 container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-        
         {/* Left Section */}
-       <div className="w-full lg:w-1/2 text-center lg:text-left mt-10 lg:mt-0">
+        <div className="w-full lg:w-1/2 text-center lg:text-left mt-10 lg:mt-0">
           <p className="text-sm font-semibold text-green-400 mb-2">
             Nigeria-first Digital Title Verification
           </p>
@@ -190,30 +264,48 @@ const Hero = () => {
                 <div className="grid grid-cols-2 gap-y-4 gap-x-4 mb-6 relative z-20">
                   <div>
                     <p className="text-green-400 text-sm mb-1">Parcel ID:</p>
-                    <p className="text-gray-100 font-medium">{verificationResult.parcelId}</p>
+                    <p className="text-gray-100 font-medium">
+                      {verificationResult.parcelId}
+                    </p>
                   </div>
                   <div>
                     <p className="text-green-400 text-sm mb-1">Owner:</p>
-                    <p className="text-gray-100 font-medium">{verificationResult.owner}</p>
+                    <p className="text-gray-100 font-medium">
+                      {verificationResult.owner}
+                    </p>
                   </div>
                   <div>
                     <p className="text-green-400 text-sm mb-1">Tenure:</p>
-                    <p className="text-gray-100 font-medium">{verificationResult.tenure}</p>
+                    <p className="text-gray-100 font-medium">
+                      {verificationResult.tenure}
+                    </p>
                   </div>
                   <div>
                     <p className="text-green-400 text-sm mb-1">Status:</p>
                     <div className="flex items-center gap-2">
-                      <p className="text-green-400 font-medium">{verificationResult.status}</p>
+                      <p className="text-green-400 font-medium">
+                        {verificationResult.status}
+                      </p>
                       <MdVerified className="text-green-400 text-xl" />
                     </div>
                   </div>
-                  <div className="col-span-2">
-                    <p className="text-green-400 text-sm mb-1">Address:</p>
-                    <p className="text-gray-100 font-medium">{verificationResult.address}</p>
+                  <div>
+                    <p className="text-green-400 text-sm mb-1">Type:</p>
+                    <p className="text-gray-100 font-medium">
+                      {verificationResult.type}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-green-400 text-sm mb-1">Last Updated:</p>
+                    <p className="text-gray-100 font-medium">
+                      {verificationResult.updatedAt}
+                    </p>
                   </div>
                   <div className="col-span-2">
-                    <p className="text-green-400 text-sm mb-1">Last Updated:</p>
-                    <p className="text-gray-100 font-medium">{verificationResult.lastUpdated}</p>
+                    <p className="text-green-400 text-sm mb-1">Address:</p>
+                    <p className="text-gray-100 font-medium">
+                      {verificationResult.address}
+                    </p>
                   </div>
                 </div>
 
@@ -232,9 +324,12 @@ const Hero = () => {
               </>
             ) : (
               <div className="text-center relative z-20">
-                <h3 className="text-2xl font-bold text-red-400 mb-4">Verification Failed!</h3>
+                <h3 className="text-2xl font-bold text-red-400 mb-4">
+                  Verification Failed!
+                </h3>
                 <p className="text-lg text-gray-200">
-                  No record found for the provided Parcel ID & Address. Please double-check your input.
+                  No record found for the provided Parcel ID & Address. Please
+                  double-check your input.
                 </p>
                 <button
                   onClick={() => setShowModal(false)}

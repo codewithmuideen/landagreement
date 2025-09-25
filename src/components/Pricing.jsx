@@ -26,7 +26,7 @@ const Pricing = () => {
           {/* Basic Plan */}
           <div className="bg-white p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300 border-l-4 border-green-500">
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">Basic</h3>
-            <p className="text-3xl font-bold text-green-600 mb-6">₦500/check</p>
+            <p className="text-3xl font-bold text-green-600 mb-6">₦15,499/check</p>
             <ul className="text-left space-y-4 mb-6">
               <li className="flex items-center text-gray-700"><FaCheckCircle className="text-green-500 mr-2" /> Single property search</li>
               <li className="flex items-center text-gray-700"><FaFileAlt className="text-green-500 mr-2" /> PDF verification report</li>
@@ -45,9 +45,9 @@ const Pricing = () => {
               Most Popular
             </span>
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">Pro</h3>
-            <p className="text-3xl font-bold text-green-600 mb-6">₦25,000/mo</p>
+            <p className="text-3xl font-bold text-green-600 mb-6">₦289,999/mo</p>
             <ul className="text-left space-y-4 mb-6">
-              <li className="flex items-center text-gray-700"><FaCheckCircle className="text-green-500 mr-2" /> Up to 1,000 checks/mo</li>
+              <li className="flex items-center text-gray-700"><FaCheckCircle className="text-green-500 mr-2" /> Up to 50 checks/mo</li>
               <li className="flex items-center text-gray-700"><FaUpload className="text-green-500 mr-2" /> Bulk uploads</li>
               <li className="flex items-center text-gray-700"><FaUserTie className="text-green-500 mr-2" /> Priority support</li>
               <li className="flex items-center text-gray-700"><FaChartLine className="text-green-500 mr-2" /> Dashboard analytics</li>
