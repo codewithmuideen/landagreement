@@ -34,15 +34,6 @@ import {
   Cell,
 } from 'recharts';
 
-/**
- * Digital Land Registry — Admin Sales & Operations Dashboard
- * - Sales KPIs (Revenue, MRR, ARPU, Conversion)
- * - Verifications & API usage
- * - Revenue by State & Plan breakdown
- * - Payments, Invoices, Top Customers
- * - System Health (latency, errors), Webhooks, Jobs Queue
- * - Uses mock data in-memory for preview. Replace with API calls.
- */
 export default function AdminSalesOpsDashboard() {
   const data = useMemo(() => mockData(), []);
   const COLORS = ['#4F46E5', '#10B981', '#F59E0B', '#EF4444', '#06B6D4', '#8B5CF6'];
@@ -215,9 +206,8 @@ export default function AdminSalesOpsDashboard() {
                     <div className="col-span-2">{p.method}</div>
                     <div className="col-span-1 text-right">
                       <span
-                        className={`rounded-full px-2 py-1 text-sm ${
-                          p.status === 'Paid' ? 'bg-emerald-600 text-white' : p.status === 'Failed' ? 'bg-rose-600 text-white' : 'bg-amber-600 text-white'
-                        }`}
+                        className={`rounded-full px-2 py-1 text-sm ${p.status === 'Paid' ? 'bg-emerald-600 text-white' : p.status === 'Failed' ? 'bg-rose-600 text-white' : 'bg-amber-600 text-white'
+                          }`}
                       >
                         {p.status}
                       </span>
@@ -308,9 +298,8 @@ export default function AdminSalesOpsDashboard() {
                       <div className="text-xs text-slate-500">{i.date} • {i.duration}m • RCA: {i.rca}</div>
                     </div>
                     <span
-                      className={`rounded-full px-2 py-1 text-sm ${
-                        i.severity === 'high' ? 'bg-rose-600 text-white' : i.severity === 'medium' ? 'bg-amber-600 text-white' : 'bg-emerald-600 text-white'
-                      }`}
+                      className={`rounded-full px-2 py-1 text-sm ${i.severity === 'high' ? 'bg-rose-600 text-white' : i.severity === 'medium' ? 'bg-amber-600 text-white' : 'bg-emerald-600 text-white'
+                        }`}
                     >
                       {i.severity}
                     </span>

@@ -10,8 +10,9 @@ import Contact from "./pages/Contact.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import TermsPrivacy from "./pages/TermsPrivacy.jsx";
 import DataResidency from "./pages/DataResidency.jsx";
-import LandRegistryAccount from "./components/LandRegistryAccount.jsx";
-import AdminSalesOpsDashboard from "./components/AdminSalesOpsDashboard.jsx";
+// import CredVerifyApp from "./components/CredVerifyApp.jsx";
+// import LandRegistryAccount from "./components/LandRegistryAccount.jsx";
+// import AdminSalesOpsDashboard from "./components/AdminSalesOpsDashboard.jsx";
 
 function App() {
   return (
@@ -28,8 +29,10 @@ function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/terms" element={<TermsPrivacy />} />
             <Route path="/data" element={<DataResidency />} />
-            <Route path="/user" element={<LandRegistryAccount />} />
-            <Route path="/admin0" element={<AdminSalesOpsDashboard />} />
+           {/* <Route path="/user" element={<CredVerifyApp />} /> */}
+            {/* <Route path="/user" element={<LandRegistryAccount />} /> */}
+            {/* <Route path="/admin0" element={<AdminSalesOpsDashboard />} /> */}
+
           </Routes>
         </main>
 
