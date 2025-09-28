@@ -1,55 +1,64 @@
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaUserPlus, FaSignInAlt } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import images from "../constants/images";
 import { Link } from "react-router-dom";
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-  { name: "Verify", href: "/#verify" },
-  { name: "Features", href: "/#features" },
-  { name: "How it Works", href: "/#how-it-works" },
-  { name: "For Whom", href: "/#forwhom" },
-  { name: "Pricing", href: "/#pricing" },
-  { name: "FAQ", href: "/#faq" },
-];
+    { name: "Verify", href: "/#verify" },
+    { name: "Features", href: "/#features" },
+    { name: "How it Works", href: "/#how-it-works" },
+    { name: "For Whom", href: "/#forwhom" },
+    { name: "Pricing", href: "/#pricing" },
+    { name: "FAQ", href: "/#faq" },
+  ];
 
   return (
-    <nav className="w-full bg-white shadow-md fixed top-0 left-0 z-50">
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Logo */}
-       <Link to="/" className="flex items-center gap-2">
-  <img src={images.logo} alt="LandBridge NG" className="h-10 w-auto" />
-  <span className="text-xl font-bold text-gray-900">LandBridge NG</span>
-</Link>
+    <nav className="w-full bg-green-100 shadow-md fixed top-0 left-0 z-50">
+      <div className="w-full px-[8%] py-3 flex justify-between items-center">
+        {/* Logo - Left */}
+        <Link to="/" className="flex items-center gap-2">
+          <img src={images.logo} alt="LandBridge NG" className="h-10 w-auto" />
+          <span className="text-xl font-bold text-gray-900">LandBridge NG</span>
+        </Link>
 
-        {/* Desktop Menu */}
+        {/* Nav Links - Center */}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-700 hover:text-green-600 transition"
+              className="text-gray-700 hover:text-green-600 transition font-medium"
             >
               {link.name}
             </a>
           ))}
-          <a
-            href="/login"
-            className="text-gray-700 hover:text-green-600 transition font-medium"
-          >
-            Log in
-          </a>
+        </div>
+
+        {/* Sign Up - Right */}
+        <div className="hidden md:flex items-center gap-4">
+         <a
+  href="/login"
+  className="flex items-center gap-2 text-gray-700 hover:text-green-600 transition font-medium"
+>
+  <FaSignInAlt className="text-lg" />
+  Log in
+</a>
+
           <a
             href="/signup"
-            className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition"
-          >
-            Create Account
+   className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-700 text-white px-5 py-2 rounded-full 
+hover:bg-white hover:text-white transition text-lg shadow-md border border-transparent hover:border-green-600"
+                   >
+            <FaUserPlus className="text-lg" />
+            Sign Up
           </a>
         </div>
 
-        {/* Mobile Menu Button (only here) */}
+        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-gray-800 text-2xl"
           onClick={() => setIsOpen(true)}
@@ -99,19 +108,22 @@ export default function Navbar() {
                     {link.name}
                   </a>
                 ))}
+               <a
+  href="/login"
+  className="flex items-center gap-2 text-gray-700 hover:text-green-600 transition font-medium"
+>
+  <FaSignInAlt className="text-lg" />
+  Log in
+</a>
+
                 <a
-                  href="#login"
-                  className="text-gray-700 hover:text-green-600 transition text-lg"
-                  onClick={() => setIsOpen(false)}
+                  href="/signup"
+                className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-700 text-white px-5 py-2 rounded-full 
+hover:bg-white hover:text-white transition text-lg shadow-md border border-transparent hover:border-green-600"
+   onClick={() => setIsOpen(false)}
                 >
-                  Log in
-                </a>
-                <a
-                  href="#signup"
-                  className="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 transition text-lg inline-block"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Create Account
+                  <FaUserPlus className="text-lg" />
+                  Sign Up
                 </a>
               </div>
             </motion.div>

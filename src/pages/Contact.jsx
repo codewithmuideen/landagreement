@@ -34,14 +34,14 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white">
+    <section className="py-20 px-6 bg-gray-50 text-gray-800">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Contact Info Section */}
         <div className="space-y-8">
           <h2 className="text-4xl font-bold leading-tight">
-            Contact <span className="text-blue-400">LandBridge NG</span>
+            Contact <span className="text-green-600">LandBridge NG</span>
           </h2>
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-600 text-lg">
             We’re here to assist you 24/7. Whether it’s land verification,
             registry inquiries, or general support — reach out and our team will
             get back to you promptly.
@@ -49,46 +49,48 @@ const Contact = () => {
 
           <div className="space-y-6">
             <div className="flex items-start space-x-4">
-              <FaEnvelope className="text-blue-400 text-2xl mt-1" />
+              <FaEnvelope className="text-green-600 text-2xl mt-1" />
               <div>
-                <h4 className="font-semibold text-white">Email</h4>
-                <p className="text-gray-300">support@landbridge.ng</p>
+                <h4 className="font-semibold text-gray-800">Email</h4>
+                <p className="text-gray-600">support@landbridge.ng</p>
               </div>
             </div>
 
             <div className="flex items-start space-x-4">
-              <FaPhoneAlt className="text-blue-400 text-2xl mt-1" />
+              <FaPhoneAlt className="text-green-600 text-2xl mt-1" />
               <div>
-                <h4 className="font-semibold text-white">Phone</h4>
-                <p className="text-gray-300">+234 800 123 4567</p>
+                <h4 className="font-semibold text-gray-800">Phone</h4>
+                <p className="text-gray-600">+234 800 123 4567</p>
               </div>
             </div>
 
             <div className="flex items-start space-x-4">
-              <FaMapMarkerAlt className="text-blue-400 text-2xl mt-1" />
+              <FaMapMarkerAlt className="text-green-600 text-2xl mt-1" />
               <div>
-                <h4 className="font-semibold text-white">Address</h4>
-                <p className="text-gray-300">
+                <h4 className="font-semibold text-gray-800">Address</h4>
+                <p className="text-gray-600">
                   15 Adeola Odeku Street, Victoria Island, Lagos, Nigeria
                 </p>
               </div>
             </div>
 
             <div className="flex items-start space-x-4">
-              <FaClock className="text-blue-400 text-2xl mt-1" />
+              <FaClock className="text-green-600 text-2xl mt-1" />
               <div>
-                <h4 className="font-semibold text-white">Support Hours</h4>
-                <p className="text-gray-300">24/7 — Always available</p>
+                <h4 className="font-semibold text-gray-800">Support Hours</h4>
+                <p className="text-gray-600">24/7 — Always available</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Contact Form */}
-        <div className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 md:p-10">
-          <h3 className="text-2xl font-bold mb-6 text-center">Send us a message</h3>
+        <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
+          <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">
+            Send us a message
+          </h3>
           {submitted && (
-            <p className="text-green-400 text-center mb-6">
+            <p className="text-green-600 text-center mb-6">
               ✅ Your message has been sent successfully!
             </p>
           )}
@@ -101,10 +103,10 @@ const Contact = () => {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Your Name"
-                className="w-full px-4 py-3 rounded-lg bg-white/20 border border-gray-500 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-600"
               />
               {errors.name && (
-                <p className="text-red-400 text-sm mt-1">{errors.name}</p>
+                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
               )}
             </div>
 
@@ -116,10 +118,10 @@ const Contact = () => {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="Your Email"
-                className="w-full px-4 py-3 rounded-lg bg-white/20 border border-gray-500 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-600"
               />
               {errors.email && (
-                <p className="text-red-400 text-sm mt-1">{errors.email}</p>
+                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
               )}
             </div>
 
@@ -131,17 +133,17 @@ const Contact = () => {
                 onChange={handleChange}
                 rows="5"
                 placeholder="Write your message..."
-                className="w-full px-4 py-3 rounded-lg bg-white/20 border border-gray-500 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-600"
               ></textarea>
               {errors.message && (
-                <p className="text-red-400 text-sm mt-1">{errors.message}</p>
+                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
               )}
             </div>
 
             {/* Submit */}
             <button
               type="submit"
-              className="w-full py-3 rounded-lg bg-blue-500 hover:bg-blue-600 transition duration-300 font-semibold shadow-lg"
+              className="w-full py-3 rounded-lg bg-green-600 hover:bg-green-700 transition duration-300 font-semibold shadow-lg text-white"
             >
               Send Message
             </button>

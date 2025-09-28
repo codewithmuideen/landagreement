@@ -12,13 +12,13 @@ const HowItWorks = () => {
       id: "01",
       title: "Search or Scan",
       desc: "Enter parcel ID/address or scan the QR on certificate.",
-      icon: <FaSearch className="text-green-600 text-2xl" />,
+      icon: <FaSearch className="text-green-600 text-lg" />,
     },
     {
       id: "02",
       title: "Validate on Ledger",
       desc: "We cross-check state registry log for conflicts.",
-      icon: <FaDatabase className="text-green-600 text-2xl" />,
+      icon: <FaDatabase className="text-green-600 text-lg" />,
     },
     {
       id: "03",
@@ -27,44 +27,36 @@ const HowItWorks = () => {
       icon: (
         <div className="flex items-center space-x-1">
           <FaFileDownload className="text-green-600 text-lg" />
-          <FaShare className="text-green-600 text-sm" />
+          <FaShare className="text-green-600 text-lg" />
         </div>
       ),
     },
   ];
 
   return (
-    <section id="how-it-works" className="py-20 bg-gray-50 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-16">
-          How It Works
+    <section id="how-it-works" className="py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-3xl font-bold text-green-700 uppercase mb-2">
+          How Does It Work?
         </h2>
+        <h3 className="text-4xl font-bold text-green-700 uppercase mb-16">
+          3 Step Process
+        </h3>
 
-        {/* Desktop Line Connector */}
-        <div className="hidden lg:block absolute top-[280px] left-1/2 transform -translate-x-1/2 w-[70%] h-[2px] bg-gradient-to-r from-green-400 via-green-500 to-green-400 z-0"></div>
-
-        <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-12 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-32">
           {steps.map((step, idx) => (
-            <div
-              key={idx}
-              className="relative bg-white p-8 rounded-xl shadow-lg max-w-xs w-full transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 mb-10 lg:mb-0"
-            >
-              {/* Step number circle */}
-              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-green-600 text-white font-bold shadow-lg">
-                {step.id}
-              </div>
-
+            <div key={idx} className="flex flex-col items-center">
               {/* Icon */}
-              <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-100 to-green-200 rounded-full mb-6 shadow-md mx-auto">
-                {step.icon}
-              </div>
+              <div className="mb-4">{step.icon}</div>
 
-              {/* Title & Description */}
-              <h3 className="text-lg font-semibold text-gray-900 mb-3 text-center">
-                {step.title}
-              </h3>
-              <p className="text-gray-600 text-sm text-center leading-relaxed">
-                {step.desc}
+              {/* Dotted Line (visible on lg) */}
+              {idx < steps.length - 1 && (
+                <div className="hidden lg:block w-32 h-[2px] border-b-2 border-dotted border-gray-300 absolute top-[60px] left-[calc(50%+4rem)] transform translate-x-1/2"></div>
+              )}
+
+              {/* Step Label */}
+              <p className="text-sm font-semibold text-gray-900 mt-8">
+                {step.id}. {step.title.toUpperCase()}
               </p>
             </div>
           ))}

@@ -4,7 +4,7 @@ const TermsPrivacy = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-700 to-purple-700 text-white py-20 px-6 text-center">
+      <section className="bg-gradient-to-r from-green-700 to-green-500 text-white py-20 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
           Terms & Privacy Policy
         </h1>
@@ -16,7 +16,7 @@ const TermsPrivacy = () => {
 
       {/* Terms Section */}
       <section className="py-16 px-6 max-w-5xl mx-auto space-y-8">
-        <h2 className="text-2xl font-bold text-indigo-700">Terms of Service</h2>
+        <h2 className="text-2xl font-bold text-green-700">Terms of Service</h2>
         <p className="text-gray-600 leading-relaxed">
           By using our platform, you agree to comply with our terms of service.
           You are responsible for ensuring the accuracy of the information you
@@ -33,7 +33,7 @@ const TermsPrivacy = () => {
 
       {/* Privacy Section */}
       <section className="py-16 px-6 max-w-5xl mx-auto space-y-8 bg-white rounded-lg shadow">
-        <h2 className="text-2xl font-bold text-indigo-700">Privacy Policy</h2>
+        <h2 className="text-2xl font-bold text-green-700">Privacy Policy</h2>
         <p className="text-gray-600 leading-relaxed">
           We are committed to protecting your personal data. This policy
           explains how we collect, use, and safeguard your information:
@@ -65,14 +65,14 @@ const TermsPrivacy = () => {
 
       {/* Contact Section */}
       <section className="py-12 px-6 text-center">
-        <h2 className="text-xl font-bold text-indigo-700 mb-4">
+        <h2 className="text-xl font-bold text-green-700 mb-4">
           Questions or Concerns?
         </h2>
         <p className="text-gray-600">
           Please reach out to us at{" "}
           <a
             href="mailto:support@landbridge.ng"
-            className="text-indigo-600 hover:underline"
+            className="text-green-600 hover:underline"
           >
             support@landbridge.ng
           </a>

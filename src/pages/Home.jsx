@@ -8,11 +8,13 @@ import Pricing from "../components/Pricing.jsx";
 import Partners from "../components/Partners.jsx";
 import FAQ from "../components/FAQ.jsx";
 import PropertyCheckBanner from "../components/PropertyCheckBanner.jsx";
+import Materials from "../components/Materials.jsx";
 
 const Home = () => {
   return (
     <>
       <Hero />
+      <Materials />
       <AmazingStatsSection />
       <AmazingFeaturesSection />
       <HowItWorks />

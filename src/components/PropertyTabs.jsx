@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import images from "../constants/images";
 import {
   FaUsers,
   FaGavel,
@@ -30,6 +31,7 @@ const tabs = [
       { icon: <FaBell />, text: "Get alerts on disputes" },
       { icon: <FaReceipt />, text: "Keep receipts in one place" },
     ],
+    image: images.prop0,
   },
   {
     id: "lawyers",
@@ -41,6 +43,7 @@ const tabs = [
       { icon: <FaShieldAlt />, text: "Court-ready audit trail" },
       { icon: <FaSearch />, text: "Bulk searches" },
     ],
+    image: images.prop1,
   },
   {
     id: "banks",
@@ -52,6 +55,7 @@ const tabs = [
       { icon: <FaCubes />, text: "API & sandbox" },
       { icon: <FaMoneyBillWave />, text: "Bulk verification pricing" },
     ],
+    image: images.prop00,
   },
   {
     id: "government",
@@ -63,6 +67,7 @@ const tabs = [
       { icon: <FaBell />, text: "Reduce disputes backlog" },
       { icon: <FaUsers />, text: "Citizen self-service portal" },
     ],
+    image: images.prop11,
   },
 ];
 
@@ -70,44 +75,56 @@ export default function PropertyTabs() {
   const [activeTab, setActiveTab] = useState("citizens");
 
   return (
-    <section id="forwhom" className="w-full bg-gradient-to-br from-blue-100 via-white to-blue-50 py-16 px-6">
+    <section id="forwhom" className="w-full bg-white py-16 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-center text-blue-900 mb-12">
-          Built for everyone in the property chain
-        </h2>
-
         {/* Tab Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-10">
+        <div className="flex flex-wrap justify-start gap-8 mb-10">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-2xl shadow-md backdrop-blur-md transition-all
-                ${
-                  activeTab === tab.id
-                    ? "bg-blue-600 text-white"
-                    : "bg-white/40 text-gray-800 hover:bg-white/60"
-                }`}
+              className={`text-lg font-medium transition-all ${
+                activeTab === tab.id
+                  ? "text-gray-800 border-b-2 border-red-500 pb-2"
+                  : "text-gray-500 hover:text-gray-800"
+              }`}
             >
-              {tab.icon}
-              <span className="font-semibold">{tab.title}</span>
+              {tab.title}
             </button>
           ))}
         </div>
 
         {/* Tab Content */}
-        <div className="bg-white/30 backdrop-blur-xl shadow-2xl rounded-3xl p-8 grid sm:grid-cols-2 gap-6">
-          {tabs
-            .find((tab) => tab.id === activeTab)
-            .content.map((item, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-4 bg-white/60 rounded-xl p-4 shadow-md hover:shadow-lg transition-all"
-              >
-                <div className="text-blue-600 text-xl">{item.icon}</div>
-                <p className="text-gray-800 font-medium">{item.text}</p>
-              </div>
-            ))}
+        <div className="flex flex-col md:flex-row justify-between">
+          <div className="md:w-1/2">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12">
+              Built for everyone in the property chain
+            </h2>
+            <div className="space-y-8">
+              {tabs
+                .find((tab) => tab.id === activeTab)
+                .content.map((item, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-800">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <p className="text-gray-800 font-medium">{item.text}</p>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+          {/* Image based on active tab */}
+          <div className="md:w-1/2 mt-8 md:mt-0 md:pl-8">
+            <div className="rounded-2xl overflow-hidden shadow-md">
+              <img
+                src={tabs.find((tab) => tab.id === activeTab).image}
+                alt={activeTab}
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

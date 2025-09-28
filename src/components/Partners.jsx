@@ -1,53 +1,77 @@
 import React from "react";
-import images from "../constants/images"; // Make sure all images are properly exported here
+import images from "../constants/images"; // Ensure all images are properly exported here
 
 const Partners = () => {
   return (
-    <section className="py-16 bg-gradient-to-r from-green-50 to-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 text-center mb-10">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-          Our Trusted Partners
+    <section className="py-12 bg-white">
+      <div className="max-w-7xl mx-auto px-4 text-left">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b border-gray-300 pb-2">
+          — Our Partners
         </h2>
-        <p className="text-lg text-gray-600">
+        <p className="text-gray-600 text-lg mb-8">
           We collaborate with top organizations across Nigeria
         </p>
-      </div>
 
-      {/* Scrolling container with animation */}
-      <div className="relative w-full overflow-hidden">
-        <div className="flex animate-scrolling space-x-16">
-          {/* Loop images twice for seamless effect */}
-          {[images.ogun, images.lagos, images.blue, images.gtb, images.abuja, images.nnpc, images.stanbic, images.uba, images.accessbank,
-            images.ogun, images.lagos, images.blue, images.gtb, images.abuja, images.nnpc, images.stanbic, images.uba, images.accessbank].map((logo, idx) => (
-            <div
-              key={idx}
-              className="flex-shrink-0 w-auto h-20 flex items-center justify-center transition-transform duration-300 hover:scale-110"
-            >
-              <img
-                src={logo}
-                alt={`partner-${idx}`}
-                className="max-h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Duplicate for seamless looping */}
-      <div className="flex animate-scrolling space-x-16 mt-4">
-        {[images.ogun, images.lagos, images.blue, images.gtb, images.abuja, images.nnpc, images.stanbic, images.uba, images.accessbank,
-          images.ogun, images.lagos, images.blue, images.gtb, images.abuja, images.nnpc, images.stanbic, images.uba, images.accessbank].map((logo, idx) => (
-          <div
-            key={`dup-${idx}`}
-            className="flex-shrink-0 w-auto h-20 flex items-center justify-center transition-transform duration-300 hover:scale-110"
-          >
+        {/* ✅ 8 logos in one row (on desktop) */}
+        <div className="grid grid-cols-2 md:grid-cols-8 gap-8 items-center">
+          <div className="flex items-center justify-center">
             <img
-              src={logo}
-              alt={`partner-${idx}`}
-              className="max-h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              src={images.gtb}
+              alt="GTBank"
+              className="max-h-16 object-contain opacity-50 hover:opacity-100 transition-opacity duration-300"
             />
           </div>
-        ))}
+          <div className="flex items-center justify-center">
+            <img
+              src={images.lagos}
+              alt="Lagos State"
+              className="max-h-16 object-contain opacity-50 hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
+          <div className="flex items-center justify-center">
+            <img
+              src={images.abuja}
+              alt="Abuja"
+              className="max-h-16 object-contain opacity-50 hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
+          <div className="flex items-center justify-center">
+            <img
+              src={images.nnpc}
+              alt="NNPC"
+              className="max-h-16 object-contain opacity-50 hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
+          <div className="flex items-center justify-center">
+            <img
+              src={images.uba}
+              alt="UBA"
+              className="max-h-16 object-contain opacity-50 hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
+          {/* ✅ 3 new partner logos */}
+          <div className="flex items-center justify-center">
+            <img
+              src={images.accessbank} // replace with actual image
+              alt="Access Bank"
+              className="max-h-16 object-contain opacity-50 hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
+          <div className="flex items-center justify-center">
+            <img
+              src={images.blue} // replace with actual image
+              alt="Fidelity Bank"
+              className="max-h-16 object-contain opacity-50 hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
+          <div className="flex items-center justify-center">
+            <img
+              src={images.ogun} // replace with actual image
+              alt="First Bank"
+              className="max-h-16 object-contain opacity-50 hover:opacity-100 transition-opacity duration-300"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

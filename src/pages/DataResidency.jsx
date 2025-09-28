@@ -4,7 +4,7 @@ const DataResidency = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-700 to-purple-700 text-white py-20 px-6 text-center">
+      <section className="bg-gradient-to-r from-green-700 to-green-500 text-white py-20 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6">Data Residency</h1>
         <p className="max-w-3xl mx-auto text-lg leading-relaxed opacity-90">
           Transparency and compliance are at the heart of our platform. Learn
@@ -14,7 +14,7 @@ const DataResidency = () => {
 
       {/* Data Residency Info */}
       <section className="py-16 px-6 max-w-5xl mx-auto space-y-8">
-        <h2 className="text-2xl font-bold text-indigo-700">Where Your Data Lives</h2>
+        <h2 className="text-2xl font-bold text-green-700">Where Your Data Lives</h2>
         <p className="text-gray-600 leading-relaxed">
           We ensure that all data processed through our platform complies with
           Nigerian regulations and international data protection standards. Our
@@ -43,7 +43,7 @@ const DataResidency = () => {
 
       {/* Security & Compliance */}
       <section className="py-16 px-6 max-w-5xl mx-auto space-y-8 bg-white rounded-lg shadow">
-        <h2 className="text-2xl font-bold text-indigo-700">Security & Compliance</h2>
+        <h2 className="text-2xl font-bold text-green-700">Security & Compliance</h2>
         <p className="text-gray-600 leading-relaxed">
           Your data security is our top priority. We employ best-in-class
           practices to ensure that sensitive property and personal information
@@ -62,14 +62,14 @@ const DataResidency = () => {
 
       {/* Contact Section */}
       <section className="py-12 px-6 text-center">
-        <h2 className="text-xl font-bold text-indigo-700 mb-4">
+        <h2 className="text-xl font-bold text-green-700 mb-4">
           Questions About Data Residency?
         </h2>
         <p className="text-gray-600">
           Reach out to our compliance team at{" "}
           <a
             href="mailto:compliance@landbridge.ng"
-            className="text-indigo-600 hover:underline"
+            className="text-green-600 hover:underline"
           >
             compliance@landbridge.ng
           </a>

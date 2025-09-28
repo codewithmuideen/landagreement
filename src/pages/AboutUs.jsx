@@ -1,6 +1,6 @@
 import React from "react";
 
-// Placeholder team images (you can replace with your own URLs)
+// Placeholder team images (replace with your own URLs if needed)
 const teamMembers = [
   {
     name: "Jane Doe",
@@ -28,7 +28,7 @@ const AboutUs = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-700 to-purple-700 text-white py-20 px-6 text-center">
+      <section className="bg-gradient-to-r from-green-700 to-green-500 text-white py-20 px-6 text-center">
         <h1 className="text-5xl font-extrabold mb-6">About Us</h1>
         <p className="max-w-3xl mx-auto text-lg leading-relaxed opacity-90">
           We are committed to transforming land and property verification across
@@ -40,7 +40,7 @@ const AboutUs = () => {
       {/* Mission & Vision Section */}
       <section className="py-20 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
         <div className="p-8 rounded-2xl shadow-lg bg-white hover:shadow-2xl transition duration-300">
-          <h2 className="text-3xl font-bold mb-4 text-indigo-700">Our Mission</h2>
+          <h2 className="text-3xl font-bold mb-4 text-green-700">Our Mission</h2>
           <p className="text-gray-600 leading-relaxed">
             To empower individuals and institutions with instant access to
             verified land records, reducing disputes and enabling seamless
@@ -48,7 +48,7 @@ const AboutUs = () => {
           </p>
         </div>
         <div className="p-8 rounded-2xl shadow-lg bg-white hover:shadow-2xl transition duration-300">
-          <h2 className="text-3xl font-bold mb-4 text-indigo-700">Our Vision</h2>
+          <h2 className="text-3xl font-bold mb-4 text-green-700">Our Vision</h2>
           <p className="text-gray-600 leading-relaxed">
             To become the leading digital property verification platform in
             Africa, fostering trust, innovation, and economic growth through
@@ -60,7 +60,9 @@ const AboutUs = () => {
       {/* Team Section */}
       <section className="py-20 px-6 bg-gray-100">
         <div className="max-w-6xl mx-auto text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Meet Our Team</h2>
+          <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
+            Meet Our Team
+          </h2>
           <p className="text-gray-600 text-lg">
             A passionate group of innovators, engineers, and leaders dedicated to
             building trust in land transactions.
@@ -79,8 +81,10 @@ const AboutUs = () => {
                 className="w-full h-56 object-cover"
               />
               <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
-                <p className="text-indigo-600 font-medium">{member.role}</p>
+                <h3 className="text-xl font-semibold text-gray-800">
+                  {member.name}
+                </h3>
+                <p className="text-green-600 font-medium">{member.role}</p>
               </div>
             </div>
           ))}

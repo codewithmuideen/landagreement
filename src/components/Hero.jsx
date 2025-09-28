@@ -169,54 +169,55 @@ const Hero = () => {
   return (
     <section
       id="verify"
-      className="relative flex items-center justify-center min-h-screen text-white py-16 px-4 bg-gradient-to-r from-[#0047AB] to-[#001D4A]"
+      className="relative flex flex-col items-center justify-center min-h-screen text-white pt-16 px-4 bg-green-100"
     >
-      <div className="relative z-10 container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-        {/* Left Section */}
-        <div className="w-full lg:w-1/2 text-center lg:text-left mt-10 lg:mt-0">
-          <p className="text-sm font-semibold text-green-400 mb-2">
-            Nigeria-first Digital Title Verification
-          </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+      <div className="relative z-10 container mx-auto flex flex-col items-center justify-center gap-12">
+        {/* Top Section - Text and Inputs */}
+        <div className="w-full text-center mt-10">
+         <p className="inline-block px-4 py-2 text-sm font-semibold text-white bg-black rounded-full mb-4">
+  Nigeria-first Digital Title Verification
+</p>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-800">
             Verify land ownership
             <br />
-            <span className="text-green-300">
+            <span className="text-green-600">
               {typedText}
               <span className="animate-pulse-cursor ml-1">|</span>
             </span>
           </h1>
-          <p className="text-lg mb-8 max-w-md mx-auto lg:mx-0">
+          <p className="text-lg mb-8 max-w-md mx-auto text-gray-700">
             Search any parcel, scan a QR Certificate of Occupancy, and receive a
             tamper-proof verification report in seconds.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center">
             <input
               type="text"
               placeholder="Parcel ID / Survey No."
-              className="p-3 rounded-lg bg-white bg-opacity-10 border border-green-500 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 flex-grow"
+              className="p-3 rounded-lg bg-white bg-opacity-90 border border-green-500 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400 flex-grow max-w-sm"
               value={parcelId}
               onChange={(e) => setParcelId(e.target.value)}
             />
             <input
               type="text"
               placeholder="Address / LGA"
-              className="p-3 rounded-lg bg-white bg-opacity-10 border border-green-500 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 flex-grow"
+              className="p-3 rounded-lg bg-white bg-opacity-90 border border-green-500 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400 flex-grow max-w-sm"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
             />
             <button
               onClick={handleVerify}
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg font-semibold transition duration-300"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg font-semibold transition duration-300 text-white"
             >
               <FiSearch /> Verify
             </button>
           </div>
         </div>
 
-        {/* Right Section - Bigger Image */}
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-12 lg:mt-0">
-          <div className="relative rounded-xl shadow-2xl overflow-hidden max-w-[600px] w-full border border-green-500">
+        {/* Bottom Section - Image */}
+        <div className="w-full flex justify-center">
+          <div className="relative overflow-hidden max-w-[600px] w-full border border-green-500">
             <img
               src={images.herobg0}
               alt="Hero"
@@ -324,19 +325,12 @@ const Hero = () => {
               </>
             ) : (
               <div className="text-center relative z-20">
-                <h3 className="text-2xl font-bold text-red-400 mb-4">
-                  Verification Failed!
-                </h3>
-                <p className="text-lg text-gray-200">
-                  No record found for the provided Parcel ID & Address. Please
+                
+                <p className="text-lg text-gray-300 mb-8">
+                   No record found for the provided Parcel ID & Address. Please
                   double-check your input.
                 </p>
-                <button
-                  onClick={() => setShowModal(false)}
-                  className="mt-6 px-6 py-3 bg-red-600 hover:bg-red-700 rounded-lg font-semibold transition duration-300"
-                >
-                  Close
-                </button>
+               
               </div>
             )}
           </div>

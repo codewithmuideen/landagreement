@@ -47,44 +47,29 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="w-full bg-[#1A202C] py-20 px-6 text-white">
-      <div className="max-w-5xl mx-auto text-center mb-14">
-        <h2 className="text-4xl font-extrabold mb-4">
-          Frequently Asked Questions
-        </h2>
-        <p className="text-lg text-gray-300">
-          Everything you need to know about Nigeria’s trusted digital land
-          registry.
-        </p>
-      </div>
-
-      <div className="max-w-4xl mx-auto space-y-6">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className={`rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg transition-all duration-300 ${
-              openIndex === index ? "ring-2 ring-blue-500" : ""
-            }`}
-          >
-            {/* Question */}
-            <button
-              onClick={() => toggleFAQ(index)}
-              className="w-full flex justify-between items-center px-6 py-5 text-left focus:outline-none"
-            >
-              <span className="font-semibold text-lg">{faq.question}</span>
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white shadow-md">
-                {openIndex === index ? <FaMinus /> : <FaPlus />}
-              </span>
-            </button>
-
-            {/* Answer */}
-            {openIndex === index && (
-              <div className="px-6 pb-6 text-gray-200 text-base leading-relaxed">
-                {faq.answer}
-              </div>
-            )}
-          </div>
-        ))}
+    <section id="faq" className="w-full bg-white py-12 px-6">
+      <div className="max-w-5xl mx-auto text-left">
+        <h2 className="text-4xl font-bold mb-8">Frequently Asked Question</h2>
+        <div className="space-y-6">
+          {faqs.map((faq, index) => (
+            <div key={index} className="border-b border-gray-200">
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full flex justify-between items-center py-4 focus:outline-none"
+              >
+                <span className="text-lg font-semibold text-black">{faq.question}</span>
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-green-300 text-black">
+                  {openIndex === index ? <FaMinus /> : <FaPlus />}
+                </span>
+              </button>
+              {openIndex === index && (
+                <div className="px-4 pb-4 text-gray-600 text-base leading-relaxed">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
